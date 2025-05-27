@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e2a44, #2b3760);
+            color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: rgba(30, 42, 68, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            max-width: 1000px;
+            width: 90%;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            color: #ffd700;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 30px;
+            font-size: 1.8em;
+        }
+
+        p, li {
+            font-size: 1.1em;
+            color: #d1d1d1;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .button-group button {
+            background-color: #ffd900;
+            color: #1e2a44;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .button-group button:hover {
+            background-color: #ffffff;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Jayasurya P</h1>
+        <p>Mechanical Engineering Student | Innovator | Tech Enthusiast</p>
+
+        <div class="button-group">
+            <button onclick="showSection('about')">About Me</button>
+            <button onclick="showSection('education')">Education</button>
+            <button onclick="showSection('skills')">Skills</button>
+            <button onclick="showSection('projects')">Projects</button>
+            <button onclick="showSection('workshops')">Workshops</button>
+            <button onclick="showSection('contact')">Contact</button>
+        </div>
+
+        <div id="about" class="content-section active section">
+            <h2>About Me</h2>
+            <p>Hey there, I'm a Passionate mechanical engineering studentwith a keen interest in AI-driven automation,design optimization, and prototyping.</p>
+        </div>
+
+        <div id="education" class="content-section section">
+            <h2>Education</h2>
+            <ul>
+                <li>B.Tech Mechanical Engineering, Karunya Institute of Technology and Sciences (2024–2028)</li>
+                <li>HSC – St. Joseph’s.Matric.Hr.Sec.School (87.3%)</li>
+                <li>SSLC – St. Joseph’s.Matric.Hr.Sec.School (88.8%)</li>
+            </ul>
+        </div>
+        <div id="skills" class="content-section section">
+            <h2>Skills</h2>
+            <ul>
+                <li>Fusion 360</li>
+                <li>Autocad</li>
+                <li>Matlab</li>
+                <li>Communication</li>
+                <li>Critical Thinking</li>
+                <li>Team Work</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="content-section section">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Soft Robotic Gripper for Adaptive Handling:</strong> Designed a flexible, pneumatic-driven gripper for delicate object handling, inspired by biomechanics</li>
+                <li><strong>Li-Fi Communication System:</strong> Developed a light-based data transmission system using Arduino, LED, and LDR sensors.</li>
+                <li><strong>NanoVibe Water Filtration System:</strong> Developed a self-powered, nanotech-based water purification system using electrolysis, ZnO-UV sterilization, and copper nanomesh filtration for remote clean water access.</li>
+                <li><strong>Dataset Accuracy Booster (Python):</strong> Built a Streamlit local web host that auto-preprocesses datasets, selects optimal ML models, and boosts classification accuracy using techniques like encoding, cleaning, and feature tuning.</li>
+                <li><strong>Vibration-Based Energy Harvester:</strong> Designed a compact system using piezoelectric sensors to convert mechanical vibrations into electrical energy, enabling sustainable power generation for small electronic devices.</li>
+            </ul>
+        </div>
+
+        <div id="workshops" class="content-section section">
+            <h2>Workshops Attended</h2>
+            <ul>
+                <li>Jetson Nano Workshop by NVIDIA – IITM Build Club</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="content-section section">
+            <h2>Contact Me</h2>
+            <p>Email: jayasuryap@karunya.edu.in</p>
+            <p>Phone: +91 8248188509</p>
+            <p>GitHub: <a href="https://github.com/Jayasurya-12pq" target="_blank">https://github.com/Jayasurya-12pq</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/jayasurya-p-479463356" target="_blank">https://www.linkedin.com/in/jayasurya-p-479463356</a></p>
+        </div>
+    </div>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
